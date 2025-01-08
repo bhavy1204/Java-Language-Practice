@@ -42,10 +42,22 @@ public class BasicVariables {
         System.out.println("Char : " + f);
         System.out.println("Boolean : " + g);
         System.out.println("-----NON PRIMITIVE DATA TYPE-----");
-        String s="Bhavy";
-        int n=  s.length();
-        char c2=s.charAt(3);
-        System.out.println("Length of string : "+ n);
-        System.out.println("Char at 3 index : "+ c2);
+        String s = "Bhavy";
+        int n = s.length();
+        char c2 = s.charAt(3);
+
+        System.out.println("Length of string : " + n);
+        System.out.println("Char at 3 index : " + c2);
+
+        System.out.println("Substring from 0 to 2 index : " + s.substring(0, 3));
+
+        System.out.println("Hash code function : " + s.hashCode());
+
+        String s2 = new String("This is original string");
+        String s3 = new String(s2);
+        System.out.println("New string with NEW keywords : " + s2);
+        System.out.println("New string with NEW keywords : " + s3);
+        String s4 = s2.replace('i', 'Z');
+        System.out.println("New string after replacing i with Z : " + s4);
     }
 }
