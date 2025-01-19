@@ -7,10 +7,7 @@
 //     }
 // }
 
-
-
 // ---------------------------------------------------------------------
-
 
 // import java.util.Scanner;
 // public class Loops{
@@ -32,8 +29,35 @@
 
 // --------------------------------------------------------------------------
 
-public class Loops{
-    public static void main(String args[]){
-        
-    }
-}
+// import java.util.Scanner;
+// public class Loops{
+//     public static void main(String args[]){
+//         Scanner sc = new Scanner(System.in);
+//         int n,i=1;
+//         System.out.println("Enter a number : ");
+//         n = sc.nextInt();
+//         while (i!=11) {
+//             System.out.println(n +" X "+i+" = "+ (n*i));
+//             i++;
+//         }
+//     }
+// }
+
+// ---------------------------------------------------------------------------
+
+// import java.util.Scanner;
+
+// public class Loops {
+//     public static void main(String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.print("Enter your number : ");
+//         int n = sc.nextInt();
+//         int i = n;
+//         int fact = 1;
+//         while (n != 1) {
+//             fact *= n;
+//             n--;
+//         }
+//         System.out.println("Factorial of " + i + " is " + fact);
+//     }
+// }
