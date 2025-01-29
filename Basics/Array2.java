@@ -24,7 +24,7 @@ public class Array2 {
         void display() {
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < col; j++)
-                    System.out.print(arr[i][j] + " ");
+                    System.out.print(this.arr[i][j] + " ");
                 System.out.println();
             }
         }
@@ -41,7 +41,27 @@ public class Array2 {
             }
         }
 
-        
+        matrix multiply(matrix m){
+            if (this.col == m.row) {
+                matrix result = new matrix();
+
+                result.row=m.row;
+                result.col=this.col;
+                result.arr = new int[m.row][this.col];
+
+                for (int i = 0; i < result.row; i++) {
+                    for (int j = 0; j < result.col; j++){
+                        result.arr[i][j]=0;
+                        for(int k =0 ;k<this.col;k++){
+                            result.arr[i][j] += this.arr[i][k] * m.arr[k][j] ;
+                        }
+                    }
+                }
+                return result;
+            }else{
+                return null;
+            }
+        }
     };
 
     public static void main(String args[]) {
@@ -58,6 +78,13 @@ public class Array2 {
         System.out.println("Addiition of matrix 1 and 2 ");
         m.add(m2);
 
+        matrix temp =  m.multiply(m2);
+        if (temp != null) {
+            System.out.println("Matrix multippication :- ");
+            temp.display();
+        }else{
+            System.out.println("Multipication not possible cols not equal to rows");
+        }
     }
 
 }
