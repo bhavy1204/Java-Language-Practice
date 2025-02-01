@@ -70,7 +70,13 @@ public class LMS {
             System.out.println("2. User ");
             System.out.print(">>> ");
 
-            
+            // To check for numeric inputs only
+            while (!input.hasNextInt()) {
+              System.out.println("Please enter a valid number ");
+              input.next();
+              System.out.print(">>>");  
+            }
+
             Mchoice = input.nextInt();
             input.nextLine();
             switch (Mchoice) {
