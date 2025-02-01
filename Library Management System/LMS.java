@@ -62,29 +62,58 @@ public class LMS {
         // System.out.println("Access granted");
         // }else
         // System.out.println("Access not granted");
+        int Mchoice = 0;
+        do {
+            System.out.println("----------------WELCOME TO LIBRARY------------------------");
+            System.out.println("Select any choice :- ");
+            System.out.println("1. Admin ");
+            System.out.println("2. User ");
+            System.out.print(">>> ");
 
-        System.out.print("Do you want to set a new admin password? (yes/no): ");
-        String choice = input.nextLine().toLowerCase();
+            
+            Mchoice = input.nextInt();
+            input.nextLine();
+            switch (Mchoice) {
+                case 1:
+                    System.out.print("Do you want to set a new admin password? (yes/no): ");
+                    String choice = input.nextLine().toLowerCase();
 
-        if (choice.equals("yes")) {
-            System.out.print("Enter new password: ");
-            String newPassword = input.nextLine();
-            String hashedPassword = Password.hashPassword(newPassword);
-            Password.savePassword(hashedPassword);
-            System.out.println(" Password set successfully!");
-            System.out.print("Enter new UserName : ");
-            String newUserName = input.nextLine();
-            String hashedUserName = Password.hashUsername(newUserName);
-            Password.saveUserName(hashedUserName);
-            Password.savePassword(hashedPassword);
-            System.out.println("UserName set successfully!");
-        } else {
-            if (admin.authenticate(input)) {
-                System.out.print("all ok ");
-            } else {
-                System.out.print("all not ok ");
+                    if (choice.equals("yes")) {
+                        System.out.print("Enter new password: ");
+                        String newPassword = input.nextLine();
+
+                        String hashedPassword = Password.hashPassword(newPassword);
+                        Password.savePassword(hashedPassword);
+
+                        System.out.println(" Password set successfully!");
+
+
+                        System.out.print("Enter new UserName : ");
+                        String newUserName = input.nextLine();
+
+                        String hashedUserName = Password.hashUsername(newUserName);
+                        Password.saveUserName(hashedUserName);
+
+                        System.out.println("UserName set successfully!");
+                    } else {
+                        if (admin.authenticate(input))
+                            System.out.print("all ok ");
+                        else
+                            System.out.print("all not ok ");
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    System.out.print("EXITING");
+                    break;
+                default:
+                    System.out.println("Invalid choice.. Please Select from given options ");
+                    break;
             }
-        }
+        } while (Mchoice != 4);
 
         input.close();
     }
