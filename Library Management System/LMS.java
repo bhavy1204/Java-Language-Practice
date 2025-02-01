@@ -9,19 +9,26 @@ class library {
 }
 
 class Admin {
-    private String userName = "Admin";
-    private String password = null;
 
     public boolean authenticate(Scanner input) {
+
+        System.out.print("Enter Your username : ");
+        String userName = input.nextLine();
+
         System.out.print("Enter Your password : ");
         String pass = input.nextLine();
 
         String hashedEnteredPassword = Password.hashPassword(pass);
+        String hashedEntereduserName = Password.hashUsername(userName);
 
         // Get the stored hashed password from the file
         String storedPassword = Password.getStoredPassword();
 
-        if (storedPassword != null && storedPassword.equals(hashedEnteredPassword))
+        // Get stpred username for admin
+        String storedUserName = Password.getStoredPassword();
+
+        if (storedPassword != null && storedUserName.equals(hashedEntereduserName)
+                && storedPassword.equals(hashedEnteredPassword))
             return true;
         else
             return false;
@@ -45,15 +52,15 @@ class Admin {
 }
 
 public class LMS {
-    
+
     public static void main(String args[]) {
         library l = new library();
         l.Greet();
         Scanner input = new Scanner(System.in);
         Admin admin = new Admin();
         // if ( admin.authenticate(input)) {
-        //     System.out.println("Access granted");
-        // }else 
+        // System.out.println("Access granted");
+        // }else
         // System.out.println("Access not granted");
 
         System.out.print("Do you want to set a new admin password? (yes/no): ");
@@ -64,11 +71,17 @@ public class LMS {
             String newPassword = input.nextLine();
             String hashedPassword = Password.hashPassword(newPassword);
             Password.savePassword(hashedPassword);
-            System.out.println("✅ Password set successfully!");
+            System.out.println(" Password set successfully!");
+            System.out.print("Enter new UserName : ");
+            String newUserName = input.nextLine();
+            String hashedUserName = Password.hashUsername(newUserName);
+            Password.saveUserName(hashedUserName);
+            Password.savePassword(hashedPassword);
+            System.out.println("UserName set successfully!");
         } else {
-            if(admin.authenticate(input)){
+            if (admin.authenticate(input)) {
                 System.out.print("all ok ");
-            }else{
+            } else {
                 System.out.print("all not ok ");
             }
         }
