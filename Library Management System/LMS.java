@@ -1,4 +1,8 @@
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import javax.print.attribute.standard.MediaSize.NA;
 
 class library {
     private int a = 10;
@@ -8,7 +12,42 @@ class library {
     }
 }
 
+class books {
+    private String Name;
+    private float price;
+    private int ISBN;
+    private String author;
+    private int quantity;
+
+    void set(Scanner input) {
+        System.out.println("Enter Name of Book : ");
+        this.Name = input.nextLine();
+        System.out.println("Enter Author of Book : ");
+        this.author = input.nextLine();
+        System.out.println("Enter price of Book : ");
+        this.price = input.nextFloat();
+        System.out.println("Enter ISBN of Book : ");
+        this.ISBN = input.nextInt();
+        System.out.println("Enter Quantity of Book : ");
+        this.quantity = input.nextInt();
+    }
+
+    void show() {
+        System.out.println("Name : " + this.Name);
+        System.out.println("Author : " + this.author);
+        System.out.println("Price : " + this.price);
+        System.out.println("ISBN : " + this.ISBN);
+        System.out.println("Quantity : " + this.quantity);
+    }
+
+    String getName() {
+        return this.Name;
+    }
+}
+
 class Admin {
+
+    private ArrayList<books> books = new ArrayList<>();
 
     public boolean authenticate(Scanner input) {
 
@@ -34,12 +73,33 @@ class Admin {
             return false;
     };
 
-    public void addBook() {
-
+    public void addBook(Scanner input) {
+        books b = new books();
+        b.set(input);
+        books.add(b);
     }
 
-    public void removeBook() {
+    public void removeBook(Scanner input) {
+        String n;
+        System.out.print("ENter Name of the book : ");
+        n = input.nextLine();
 
+        Iterator<books> it = books.iterator();
+        boolean found = false;
+
+        while (it.hasNext()) {
+            books b = it.next();
+            if (b.getName().equalsIgnoreCase(n)) {
+                b.show();
+                it.remove();
+                found = true;
+                System.out.println("----BOOK DELETED SUCCESSFULLY----");
+                break;
+            }
+        }
+        if (found == false) {
+            System.out.println("----BOOK \" " + n + " \" Not Found----");
+        }
     }
 
     public void viewBook() {
@@ -72,9 +132,9 @@ public class LMS {
 
             // To check for numeric inputs only
             while (!input.hasNextInt()) {
-              System.out.println("Please enter a valid number ");
-              input.next();
-              System.out.print(">>>");  
+                System.out.println("Please enter a valid number ");
+                input.next();
+                System.out.print(">>>");
             }
 
             Mchoice = input.nextInt();
@@ -92,7 +152,6 @@ public class LMS {
                         Password.savePassword(hashedPassword);
 
                         System.out.println(" Password set successfully!");
-
 
                         System.out.print("Enter new UserName : ");
                         String newUserName = input.nextLine();
