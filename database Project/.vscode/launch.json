@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "request": "launch",
+            "mainClass": "CRUD",
+            "classPaths": [
+                "${workspaceFolder}/lib/mysql-connector-j-9.2.0.jar"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
+
+  
