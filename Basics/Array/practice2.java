@@ -1,1 +1,0 @@
-//questions of array from geeks for geeks and code chef
