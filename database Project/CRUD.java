@@ -73,9 +73,13 @@ public class CRUD {
     // To read data
     public static void read() {
         try {
+            // 1 -> Create connection object through DriverManager object's getConnection method and stoore it in con
             Connection con = DriverManager.getConnection(url, username, password);
+            // 2 -> Create statement through createStatement method of connection object and store it in statement object 
             Statement stmnt = con.createStatement();
+            // Write query in a simmple string
             String query = "select * from student";
+            // 3-> Store result bt executing the query in executeQuery of statemtnt object and store it in result object
             ResultSet res = stmnt.executeQuery(query);
             // To read data
             while (res.next()) {
