@@ -25,6 +25,7 @@ public class ClassAndObjects {
         for(int i = 0 ;i<p.length;i++){
             p[i].show();
         }
+        input.close();
     }
 }
 

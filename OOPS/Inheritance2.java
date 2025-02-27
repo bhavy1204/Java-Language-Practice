@@ -14,7 +14,7 @@ public class Inheritance2 {
 
 class base {
     int data = 5;
-    private int privData = 10;
+    // private int privData = 10;
     protected int protData = 20;
     public int pubData = 30;
 

@@ -36,6 +36,7 @@ public class Practice1 {
                 arr[i][j] = input.nextInt();
             }
         }
+        input.close();
     }
 
     void display() {
@@ -153,6 +154,7 @@ public class Practice1 {
                     break;
             }
         } while (choice != 6);
+        input.close();
     }
 
     public static void main(String[] args) {

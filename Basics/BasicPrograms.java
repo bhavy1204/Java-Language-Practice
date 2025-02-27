@@ -48,5 +48,6 @@ public class BasicPrograms {
         System.out.println("Gross salary : " + grossSalary);
         System.out.println("Net salary : " + netSalary);
         System.out.println("------------------------------------");
+        input.close();
     }
 }

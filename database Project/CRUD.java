@@ -132,6 +132,6 @@ public class CRUD {
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
         }
-
+        input.close();
     }
 }
