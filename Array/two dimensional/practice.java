@@ -36,5 +36,6 @@ public class practice {
 
         int size = arr.length;
         System.out.println(size);
+        input.close();
     }
 }

@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Practice1 {
     int row, col;
@@ -25,14 +25,14 @@ public class Practice1 {
 
     void arrInput() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter number of rows : ");
+        System.out.print("Enter number of rows : ");
         row = input.nextInt();
-        System.out.println("Enter number of cols : ");
+        System.out.print("Enter number of cols : ");
         col = input.nextInt();
         arr = new int[row][col];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.println("Enter value of [" + i + "," + j + "] : ");
+                System.out.print("Enter value of [" + i + "," + j + "] : ");
                 arr[i][j] = input.nextInt();
             }
         }
@@ -93,7 +93,6 @@ public class Practice1 {
             System.out.println("Bhai matrix padh ke aa pehle har kuch kar raha hai ! ");
     }
 
-
     void multipication() {
         Practice1 p1 = new Practice1();
         Practice1 p2 = new Practice1();
@@ -108,7 +107,7 @@ public class Practice1 {
 
             for (int i = 0; i < p1.arr.length; i++) {
                 for (int j = 0; j < p2.arr[0].length; j++) {
-                    for(int k =0 ; k< p1.arr[i].length;k++){
+                    for (int k = 0; k < p1.arr[i].length; k++) {
                         p3.arr[i][j] += p1.arr[i][k] * p2.arr[k][j];
                     }
                 }
@@ -118,6 +117,7 @@ public class Practice1 {
             System.out.println("Bhai matrix padh ke aa pehle har kuch kar raha hai ! ");
     }
 
+    // main menu
     void menu() {
         int choice;
         Scanner input = new Scanner(System.in);
