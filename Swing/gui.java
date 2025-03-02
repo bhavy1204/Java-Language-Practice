@@ -6,7 +6,7 @@ public class gui {
         int boardWidth=600;
         int boardHeight =boardWidth;
 
-        JFrame f = new JFrame("MEOW");
+        JFrame f = new JFrame("Title");
         f.setVisible(true);
         f.setSize(boardWidth,boardHeight);
         f.setLocationRelativeTo(null);
