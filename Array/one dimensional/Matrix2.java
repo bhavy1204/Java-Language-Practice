@@ -24,6 +24,7 @@ public class Matrix2 {
         // }
 
         display();
+        input.close();
     }
 
     void display() {
