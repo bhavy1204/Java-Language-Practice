@@ -1,10 +1,5 @@
 package Swing;
 
-import java.awt.Color;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-
 public class frame {
 
     public static void main(String args[]) {
@@ -27,6 +22,7 @@ public class frame {
         // // frame.getContentPane().setBackground(Color.BLUE);
         // frame.getContentPane().setBackground(new Color(123,44,32));
 
-        Myframe m = new Myframe();
+        // Myframe m = new Myframe();
+        new Myframe();
     }
 }
