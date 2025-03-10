@@ -1,4 +1,4 @@
-package Functionns;
+package Methods;
 
 public class basics {
     public static int add(int a,int b){//parameters(formal parameters)
