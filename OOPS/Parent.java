@@ -1,12 +1,12 @@
 public class Parent{
     int data;
-    // Parent(){
-    //     System.out.println("");
-    // }
+    Parent(){
+        System.out.println("");
+    }
     Parent(int data){
         this.data = data;
     }
-    void showP(){
+    void show(){
         System.out.println("Parent's show function ");
     }
 }

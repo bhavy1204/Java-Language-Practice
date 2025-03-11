@@ -5,6 +5,7 @@ public class Child extends Parent{
         this.childData= childData;
     }
     void show(){
-        System.out .println("Childs function");
+        System.out .println("Child1 function");
     }
+    
 }
