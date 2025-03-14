@@ -5,9 +5,17 @@ abstract class Animal {
     }
 }
 
-class Cat extends Animal{
+interface temp{
+    int data=10;
+    void showData();
+}
+
+class Cat extends Animal implements temp{
     void speak(){
         System.out.println("Meow Meow !! ");
+    }
+    public void showData(){
+        System.out.println("This is data : "+temp.data);
     }
 }
 
